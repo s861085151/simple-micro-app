@@ -10,16 +10,18 @@ class MyElement extends HTMLElement {
     super();
   }
 
-  name = "";
-  url = "";
+  appName = "";
+  appUrl = "";
+  // name = "";
+  // url = "";
 
   connectedCallback() {
     // 元素被插入到DOM时调用，此时去加载子应用的静态资源并渲染
     console.log("micro app is connected");
     console.log("this", this);
     const app = new CreateApp({
-      name: this.name,
-      url: this.url,
+      name: this.appName,
+      url: this.appUrl,
       container: this,
     });
 
@@ -38,12 +40,12 @@ class MyElement extends HTMLElement {
   attributeChangedCallback(attrName, oldVal, newVal) {
     // 元素属性发生变化时，执行的操作
     // 可以获取到name、url等属性的值
-    console.log("attribute changed", attr);
-    if (attrName === "name" && !this.name && newVal) {
-      this.name = newVal;
+    console.log("attribute changed", attrName);
+    if (attrName === "name" && !this.appName && newVal) {
+      this.appName = newVal;
     }
-    if (attrName === "url" && !this.url && newVal) {
-      this.url = newVal;
+    if (attrName === "url" && !this.appUrl && newVal) {
+      this.appUrl = newVal;
     }
   }
 }

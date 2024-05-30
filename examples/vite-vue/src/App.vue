@@ -14,11 +14,14 @@ const showMircoApp = ref(true);
     </a>
   </div>
   <h3>基座应用：Vite + Vue</h3>
+  <p class="text-color">
+    我是基座应用的文字
+  </p>
   <button @click="showMircoApp =!showMircoApp">显示/隐藏</button>
-  <micro-app v-if="showMircoApp" name="app" url="http://localhost:3000/react17"></micro-app>
+  <micro-app name="app" url="http://localhost:6001/react17" v-if="showMircoApp"></micro-app>
 </template>
 
-<style scoped>
+<style>
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -30,5 +33,9 @@ const showMircoApp = ref(true);
 }
 .logo.vue:hover {
   filter: drop-shadow(0 0 2em #42b883aa);
+}
+
+.text-color {
+  color: red;
 }
 </style>
