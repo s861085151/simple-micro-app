@@ -4,6 +4,14 @@ import './index.css';
 import AppRouter from "./router";
 import reportWebVitals from './reportWebVitals';
 
+window.globalStr = 'child'
+
+console.log('react 子应用')
+
+window.addEventListener('scroll', (event) => {
+  console.log('react子应用scroll事件', event);
+})
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
